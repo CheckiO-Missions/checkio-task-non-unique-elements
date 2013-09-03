@@ -1,34 +1,32 @@
 <p>
-    <i>( Describe task in general )</i>
-</p>
+    Given a list of integers. You should return a list consisting of only non-unique elements.
+    To do so, you need to remove all unique elements (contained in a given list only once).
+    Don't change the order of a list.
+    Example: [1, 2, 3, 1, 3] 1 and 3 non-unique elements and result will be [1, 3, 1, 3].
 
-<p>
-    Sum two passed ints
 </p>
 
 <p style="text-align: center;">
-    <img class="for_info_only" title="example" src="{{MEDIA}}example.png" alt="example" width="392px"/>
-    <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
+    <img class="for_info_only"
+         title="non-unique-elements"
+         src="{{MEDIA}}non-unique-elements.png"
+         alt="non-unique-elements"
+         width="600px"/>
+    <img class="for_editor_only"
+         title="non-unique-elements"
+         src="{{MEDIA}}non-unique-elements.png"
+         alt="non-unique-elements"
+         width="380px"/>
 </p>
 
-<p><i>( Explain input and output values )</i></p>
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
-</p>
+<p><strong>Input: </strong>A list of integers.</p>
 
-<p>
-    <strong>Output: </strong> Int. 
-</p>
-
-
-
+<p><strong>Output: </strong>A list of integers.</p>
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
-    <p>
-        <strong>Example:</strong>
-    </p>
-    <pre class="brush: python">
-checkio(3, 2) == 5
-checkio(5, 7) == 12
-    </pre>
+    <p><strong>Example:</strong></p>
+<pre class="brush: python">checkio([1, 2, 3, 1, 3]) == [1, 3, 1, 3]
+checkio([1, 2, 3, 4, 5]) == []
+checkio([5, 5, 5, 5, 5]) == [5, 5, 5, 5, 5]
+checkio([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
+</pre>
 </div>
