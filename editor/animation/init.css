@@ -63,14 +63,14 @@
 
 .tryit-content .tool td{
     text-align: center;
-    vertical-align: top;
-    padding: 3px;
+    vertical-align: middle;
+    padding-top: 2px;
+    color: #294270;
+    font-size: 16px;
+    font-family: verdana;
 }
 
 /*it for firefox*/
-.tryit-content .tool tr:first-child td:last-child {
-    height: 20%;
-}
 
 .tryit-content .checkio-result{
     font-size: 16px;
@@ -127,12 +127,13 @@ fieldset[disabled] .btn {
 .tryit-content input[type="text"],
 .tryit-content input[type="number"]
 {
+    width: 100%;
+    font-size: 16px;
+    color: #294270;
     display: inline-block;
     padding: 4px 6px;
-    font-size: 14px;
     line-height: 1.428571429;
     font-family: inherit;
-    color: #294270;
     vertical-align: middle;
     background-color: #ffffff;
     border: 1px solid #cccccc;

@@ -1,4 +1,5 @@
 //Dont change it
+//Dont change it
 requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
     function (ext, $, TableComponent) {
 
@@ -87,7 +88,40 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             this_e.setAnimationHeight($content.height() + 60);
 
         });
+        
+        var $tryit;
 
+        ext.set_console_process_ret(function (this_e, ret) {
+            try {
+                ret = JSON.parse(ret);
+            }
+            catch (err) {
+            }
+            $tryit.find('.checkio-result').html("Checkio return<br>" + JSON.stringify(ret));
+        });
+
+        ext.set_generate_animation_panel(function (this_e) {
+            $tryit = $(this_e.setHtmlTryIt(ext.get_template('tryit'))).find(".tryit-content");
+            
+
+
+            $tryit.find('.bn-check').click(function(e){
+                var $input = $tryit.find('.input-list');
+                var inputList = $input.val().split(" ");
+                var tryList = [];
+                for (var i = 0; i < inputList.length; i++) {
+                    if (isNaN(inputList[i]) || inputList[i] === "") {
+                        continue;
+                    }
+                    tryList.push(Number(inputList[i]));
+                }
+                $input.val(tryList.join(" "));
+                this_e.sendToConsoleCheckiO(tryList);
+                e.stopPropagation();
+                return false;
+            });
+
+        });
        
 
         var colorOrange4 = "#F0801A";
