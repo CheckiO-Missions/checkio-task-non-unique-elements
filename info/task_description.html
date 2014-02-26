@@ -1,5 +1,6 @@
 <p>
-    You are given a list of integers. For this task, you should return a list consisting of only the non-unique elements in this list.
+    You are given a non-empty list of integers (X).
+    For this task, you should return a list consisting of only the non-unique elements in this list.
     To do so you will need to remove all unique elements (elements which are contained in a given list only once).
     When solving this task, do not change the order of the list.
     Example: [1, 2, 3, 1, 3] 1 and 3 non-unique elements and result will be [1, 3, 1, 3].
@@ -21,7 +22,7 @@
 
 <p><strong>Input: </strong>A list of integers.</p>
 
-<p><strong>Output: </strong>A list of integers.</p>
+<p><strong>Output: </strong>The list of integers.</p>
 <div class="for_info_only">
     <p><strong>Example:</strong></p>
 <pre class="brush: python">checkio([1, 2, 3, 1, 3]) == [1, 3, 1, 3]
@@ -33,5 +34,12 @@ checkio([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
 <p>
     <strong>How it is used:</strong>
     This task will help you to understand how to manipulate lists, something that is the basis for solving more complex tasks.
+    One of the frequently errors is when a developer try to read and remove elements of the array inside the same iterating.
+    But this is not only a learning task. It can be easily generalized for the real task,
+    for example if you need to clear statistics for low frequency elements (noise).
 
+</p>
+
+<p><strong>Precondition:<br> </strong>
+     |X| = N;0 < N < 1000<br>
 </p>
