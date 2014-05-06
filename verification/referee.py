@@ -35,4 +35,4 @@ class CheckiORefereeScore(CheckiOReferee):
 
 api.add_listener(
     ON_CONNECT,
-    CheckiOReferee(tests=TESTS).on_ready)
+    CheckiORefereeScore(tests=TESTS).on_ready)
