@@ -29,10 +29,6 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
         });
 
         ext.set_animate_success_slide(function (this_e, options) {
-            console.log("arguments");
-            console.log(arguments);
-            console.log("options");
-            console.log(options);
             var $h = $(this_e.setHtmlSlide('<div class="animation-success"><div></div></div>'));
             this_e.setAnimationHeight(115);
         });
