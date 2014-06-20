@@ -1,0 +1,44 @@
+<p>
+	あなたは空でない整数のリスト(X)を与えられます。
+	このタスクでは、あなたはこのリストの非ユニークな要素だけでできているリストを返さなければいけません
+	そのようにするために、あなたは全てのユニークな要素(与えられたリストの中に一回だけ含まれる要素)を削除する必要があるでしょう。
+	このタスクを解くとき、リストの順番を変更してはいけません。
+	例: [1, 2, 3, 1, 3] 1と3は非ユニークな要素で結果は[1, 3, 1, 3]になります。
+
+</p>
+
+<p style="text-align: center;">
+    <img class="for_info_only"
+         title="non-unique-elements"
+         src="{{MEDIA}}non-unique-elements.png"
+         alt="non-unique-elements"
+         width="600px"/>
+    <img class="for_editor_only"
+         title="non-unique-elements"
+         src="{{MEDIA}}non-unique-elements.png"
+         alt="non-unique-elements"
+         width="380px"/>
+</p>
+
+<p><strong>入力: </strong>整数のリスト</p>
+
+<p><strong>出力: </strong>整数のリスト</p>
+<div class="for_info_only">
+    <p><strong>例:</strong></p>
+<pre class="brush: python">checkio([1, 2, 3, 1, 3]) == [1, 3, 1, 3]
+checkio([1, 2, 3, 4, 5]) == []
+checkio([5, 5, 5, 5, 5]) == [5, 5, 5, 5, 5]
+checkio([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
+</pre>
+</div>
+<p>
+    <strong>どのように使われるか:</strong>
+	このミッションは、より複雑なタスクを解決するための基礎である何か、配列の操作法を理解するのに役に立ちます。
+	コンセプトは簡単に実世界のタスクに一般化できます。
+	例えば: 頻度の低い要素(ノイズ)を取り除くことで統計を明確にする必要があるときです。
+
+</p>
+
+<p><strong>事前条件:<br> </strong>
+     0 < |X| < 1000<br>
+</p>
