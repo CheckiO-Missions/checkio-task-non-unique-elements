@@ -1,0 +1,50 @@
+<body data-author="bryukh">
+<div class="question-answer">
+    <div class="question">
+        Даже не знаю с чего начать решать.
+    </div>
+    <div class="answer">
+        Списки (list) в Python имеют очень полезный метод для этой задачи --
+        <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">count(element)</a>.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Нужна еще помощь в решении.
+    </div>
+    <div class="answer">
+        Не удаляйте элементы из массива, если вы его перебираете (for .. in ..) - результаты непредсказуемы.
+        И не забудьте, что вам надо чтобы функция возвращала результат, а не печатала его.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Я уже на полпути, но помощь не помешает.
+    </div>
+    <div class="answer">
+        Попробуйте создать пустой список: result = [], и добавляйте туда неуникальные элементы.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Кажется я застрял. Можно еще подсказку?
+    </div>
+    <div class="answer">
+        "for el in array", "data.count" и "result.append" - это все что вам нужно в этой задаче.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Перепробовал все. Ничего не помогает. SOS
+    </div>
+    <div class="answer">
+        Просто соедините все методы из последней подсказки.
+        <pre class="brush: python">
+for el in data:
+    if data.count(el) > 1:
+        result.append(el)
+        </pre>
+
+    </div>
+</div>
+</body>
