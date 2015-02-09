@@ -34,7 +34,7 @@
 .animation-content{
     background-color: #dfe8f7;
     color: #696969;
-    font-family: verdana;
+    font-family: Roboto, Arial, 'Open Sans', sans-serif;
     font-size: 15px;
 }
 
@@ -49,6 +49,13 @@
     text-align: center;
     letter-spacing: 0.7px;
     word-break: break-word;
+}
+
+.animation-content .treehouse {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    padding-top: 10px;
 }
 
 .animation-content .error{
