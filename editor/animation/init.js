@@ -61,7 +61,14 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             //if you need additional info from tests (if exists)
             var explanation = data.ext["explanation"];
 
-            $content.find('.output').html('&nbsp;Your result:&nbsp;' + ext.JSON.encode(userResult));
+
+            if (userResult === null) {
+                $content.find('.output').html('Your function returned None, maybe you are trying "print" results instead "return" them.');
+            }
+            else {
+                $content.find('.output').html('&nbsp;Your result:&nbsp;' + JSON.stringify(userResult));
+            }
+
 
             if (!result) {
                 $content.find('.call').html('Fail: checkio(' + ext.JSON.encode(checkioInput) + ')');
