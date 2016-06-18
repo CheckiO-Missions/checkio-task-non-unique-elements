@@ -1,7 +1,7 @@
 //Dont change it
 //Dont change it
 requirejs(['ext_editor_io', 'jquery_190'],
-    function (ext, $) {
+    function (extIO, $) {
         
         var $tryit;
 
