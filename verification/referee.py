@@ -35,4 +35,10 @@ class CheckiORefereeScore(CheckiOReferee):
 
 api.add_listener(
     ON_CONNECT,
-    CheckiORefereeScore(tests=TESTS).on_ready)
+    CheckiORefereeScore(
+        tests=TESTS,
+        function_name={
+            "python": "checkio",
+            "js": "nonUniqueElements"
+        }
+    ).on_ready)
