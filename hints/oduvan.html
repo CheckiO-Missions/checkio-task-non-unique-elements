@@ -1,0 +1,108 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        Give me a hint on how to solve this mission
+    </div>
+    <div class="answer">
+        <p>You can use <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list method</a> "count" that returns the number of times x appears in the list.</p>
+
+        <p>Here is an example:</p>
+        <pre>
+>>> a = [1,2,2,3,4,5,6,3,2]
+>>> a.count(3)
+2
+        </pre>
+
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        How can I use this to solve this mission?
+    </div>
+    <div class="answer">
+        <p>Let’s think about this way: you need to go through all elements of a given list and create a news list filled with all unique elements.</p>
+        <pre class="brush: python">
+def checkio(data):
+    # init empty list
+    for item in data:
+        if data.count(item) > 1:
+            # add in this list current item
+    # return the list
+        </pre>
+        <p>All you have left to do is to replace comments with python code</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Help me replace this
+    </div>
+    <div class="answer">
+        <p>Sure. Here is what you need to know.</p>
+
+        <p>To initialize an empty list do this:</p>
+
+        <pre class="brush: python">
+new_list = []
+        </pre>
+
+        <p>To add an item into the list do this:</p>
+
+        <pre class="brush: python">
+new_list.append(item)
+        </pre>
+
+        <p>To return the list use this:</p>
+
+        <pre class="brush: python">
+return new_list
+        </pre>
+
+        <p>So the correct answer might look like this:</p>
+
+        <pre class="brush: python">
+def checkio(data):
+    result = []
+    for item in data:
+        if data.count(item) > 1:
+            result.append(item)
+    return result
+        </pre>
+
+        <p>I would also recommend you <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">go through all available list methods</a>, so you know what other methods you can use in future.</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Is there any way I can improve it?
+    </div>
+    <div class="answer">
+        There is always a way to improve. You can <a href="https://docs.python.org/3/library/functions.html?highlight=filter#filter">take a look at the filter function for Python 3</a>.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ok. How can I use it?
+    </div>
+    <div class="answer">
+        <p>You can simply replace code </p>
+
+        <pre class="brush: python">
+def checkio(data):
+    result = []
+    for item in data:
+        if data.count(item) > 1:
+            result.append(item)
+    return result
+        </pre>
+
+        <p>To return the list use this:</p>
+
+        <pre class="brush: python">
+def checkio(data):
+    return filter(lambda a: data.count(a) > 1, data)
+        </pre>
+
+        <p>It is shorter and even easier to read.</p>
+    </div>
+</div>
+</body>

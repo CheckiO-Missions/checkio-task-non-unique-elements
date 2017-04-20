@@ -1,0 +1,67 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        Give me a hint on how to solve this mission
+    </div>
+    <div class="answer">
+        <p>Well, let’s starting with a simple function that recognizes if this is a unique element in a given list.</p>
+
+        <p>For now I have a couple versions for you to try. First one is longer:</p>
+        <pre class="brush: python">
+function isUnique(arr, el) {
+    var hasOne = false;
+    for (let item of arr) {
+        if (item === el) {
+            if (hasOne) {
+                return false;
+            } else {
+                hasOne = true;
+            }
+        }
+    }
+    return true;
+}
+        </pre>
+
+        <p>The second one is short but maybe harder to understand if you are new to JS and ES6</p>
+        <pre class="brush: python">
+function isUnique(arr, el) {
+    return arr.filter(a => a === el).length === 1
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        How can I use this to solve this mission?
+    </div>
+    <div class="answer">
+        <p>Think about this way: you need to go through all elements of a given list and create a news list filled with all unique elements. Again, I’ll show you two ways to solve it</p>
+
+        <p>A long one:</p>
+
+<pre class="brush: python">
+function nonUniqueElements(data) {
+    const new_result = []
+    for (let item of data) {
+        if (!isUnique(data, item)) {
+            new_result.push(item)
+        }
+    }
+    return new_result;
+}
+</pre>
+
+
+<p>And a short one:</p>
+
+<pre class="brush: python">
+function nonUniqueElements(data) {
+    return data.filter(item => !isUnique(data, item))
+}
+</pre>
+
+    </div>
+</div>
+
+</body>
