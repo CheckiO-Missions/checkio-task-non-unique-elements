@@ -1,7 +1,7 @@
 <body data-author="oduvan">
 <div class="question-answer">
     <div class="question">
-        Give me a hint on how to solve this mission
+        Please give me a hint on how to solve this mission.
     </div>
     <div class="answer">
         <p>You can use <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list method</a> "count" that returns the number of times x appears in the list.</p>
@@ -20,21 +20,21 @@
         How can I use this to solve this mission?
     </div>
     <div class="answer">
-        <p>Let’s think about this way: you need to go through all elements of a given list and create a news list filled with all unique elements.</p>
+        <p>Let’s think about this way: you need to go through all elements of a given list and create a new list filled with all non unique elements.</p>
         <pre class="brush: python">
 def checkio(data):
     # init empty list
     for item in data:
         if data.count(item) > 1:
-            # add in this list current item
+            # add the current item to the new list you initialized before
     # return the list
         </pre>
-        <p>All you have left to do is to replace comments with python code</p>
+        <p>All you have left to do is to replace the comments with python code</p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Help me replace this
+        Please help me to replace the comments.
     </div>
     <div class="answer">
         <p>Sure. Here is what you need to know.</p>
@@ -45,7 +45,7 @@ def checkio(data):
 new_list = []
         </pre>
 
-        <p>To add an item into the list do this:</p>
+        <p>To add an item to the list do this:</p>
 
         <pre class="brush: python">
 new_list.append(item)
@@ -68,15 +68,15 @@ def checkio(data):
     return result
         </pre>
 
-        <p>I would also recommend you <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">go through all available list methods</a>, so you know what other methods you can use in future.</p>
+        <p>I would also recommend you to <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">to have a look at all available list methods</a>, so you know what other methods you might need in the future.</p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        Is there any way I can improve it?
+        Is there any way I can improve the solution?
     </div>
     <div class="answer">
-        There is always a way to improve. You can <a href="https://docs.python.org/3/library/functions.html?highlight=filter#filter">take a look at the filter function for Python 3</a>.
+        There is always a way to improve something. You can <a href="https://wiki.python.org/moin/Generators">take a look at Generators for Python</a>.
     </div>
 </div>
 <div class="question-answer">
@@ -99,7 +99,7 @@ def checkio(data):
 
         <pre class="brush: python">
 def checkio(data):
-    return filter(lambda a: data.count(a) > 1, data)
+    return (a for a in data if data.count(a) > 1)
         </pre>
 
         <p>It is shorter and even easier to read.</p>
