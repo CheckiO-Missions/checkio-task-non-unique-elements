@@ -5,7 +5,7 @@ from checkio.referees.io import CheckiOReferee
 from tests import TESTS
 
 cover = """def cover(func, data):
-    return list(func(data))
+    return func(data)
 """
 
 api.add_listener(
