@@ -1,0 +1,108 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        Хотів би отримати підказку, як розвязати цю міссію.
+    </div>
+    <div class="answer">
+        <p>Ти можеш використати <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">метод списку</a> "count", який повертає кількість конкретного значення Х у списку.</p>
+
+        <p>Ось наприклад:</p>
+        <pre>
+>>> a = [1,2,2,3,4,5,6,3,2]
+>>> a.count(3)
+2
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Як мені це використати для проходження місії?
+    </div>
+    <div class="answer">
+        <p>Давай міркувати так: тобі потрібно пройти по всіх елементах вхідного списку
+            і створити новий список із не унікальними елементами.</p>
+        <pre class="brush: python">
+def checkio(data):
+    # тут ти маєш створити новий порожній список
+    for item in data:
+        if data.count(item) > 1:
+            # додай item у новий список, який ти створив раніше
+    # поверни список, який ти створив на початку
+        </pre>
+        <p>Все, що тобі лишилося, це замінити коментарі кодом.</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Мені потрібна допомога із заміною коментарів на код.
+    </div>
+    <div class="answer">
+        <p>Звісно. Ось що тобі потрібно знати.</p>
+
+        <p>Щоб створити новий список, зроби наступне:</p>
+
+        <pre class="brush: python">
+new_list = []
+        </pre>
+
+        <p>Щоб додати елемент до списку, зроби:</p>
+
+        <pre class="brush: python">
+new_list.append(item)
+        </pre>
+
+        <p>Щоб повернути готовий список, використай:</p>
+
+        <pre class="brush: python">
+return new_list
+        </pre>
+
+        <p>Тож остаточний код матиме вигляд:</p>
+
+        <pre class="brush: python">
+def checkio(data):
+    result = []
+    for item in data:
+        if data.count(item) > 1:
+            result.append(item)
+    return result
+        </pre>
+
+        <p>Я також раджу тобі <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">поглянути на всі методи списків</a>, адже вони тобі точно знадобляться у майбутньому.</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Чи можна якось вдосконалити розв'язок?
+    </div>
+    <div class="answer">
+        Завжди є можливість вдосконалити рішення!. Ти можеш <a href="https://wiki.python.org/moin/Generators">поглянути на Генератори у Python</a>.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Так. І як це тут застосувати?
+    </div>
+    <div class="answer">
+        <p>Просто заміни код</p>
+
+        <pre class="brush: python">
+def checkio(data):
+    result = []
+    for item in data:
+        if data.count(item) > 1:
+            result.append(item)
+    return result
+        </pre>
+
+        <p>наступним:</p>
+
+        <pre class="brush: python">
+def checkio(data):
+    return (a for a in data if data.count(a) > 1)
+        </pre>
+
+        <p>Так буде коротше і зрозуміліше.</p>
+    </div>
+</div>
+</body>
