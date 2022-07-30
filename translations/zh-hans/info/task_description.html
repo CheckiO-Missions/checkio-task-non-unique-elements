@@ -24,7 +24,18 @@
 <p><strong>输出: </strong>An iterable of integers.</p>
 <div class="for_info_only">
     <p><strong>范例:</strong></p>
-    <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+<pre class="brush: python">{% if interpreter.slug == "js-node" %}
+nonUniqueElements([1, 2, 3, 1, 3]) == [1, 3, 1, 3]
+nonUniqueElements([1, 2, 3, 4, 5]) == []
+nonUniqueElements([5, 5, 5, 5, 5]) == [5, 5, 5, 5, 5]
+nonUniqueElements([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
+{% else %}
+checkio([1, 2, 3, 1, 3]) == [1, 3, 1, 3]
+checkio([1, 2, 3, 4, 5]) == []
+checkio([5, 5, 5, 5, 5]) == [5, 5, 5, 5, 5]
+checkio([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
+{% endif %}
+</pre>
 </div>
 <p>
     <strong>如何使用：</strong>
