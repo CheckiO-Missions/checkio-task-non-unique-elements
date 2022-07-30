@@ -1,0 +1,68 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        Хотів би отримати підказку, як розвязати цю міссію.
+    </div>
+    <div class="answer">
+        <p>Що ж, почнемо із простої функції, яка перевіряє, запитуваний елемент унікальний в листі.</p>
+
+        <p>Поки що маю для тебе дві версії розв'язку. Перша довша:</p>
+        <pre class="brush: python">
+function isUnique(arr, el) {
+    var hasOne = false;
+    for (let item of arr) {
+        if (item === el) {
+            if (hasOne) {
+                return false;
+            } else {
+                hasOne = true;
+            }
+        }
+    }
+    return true;
+}
+        </pre>
+
+        <p>Друга коротша, але може бути важкою для розуміння, якщо ти новачок в JS і ES6</p>
+        <pre class="brush: python">
+function isUnique(arr, el) {
+    return arr.filter(a => a === el).length === 1
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Як мені використати це тут?
+    </div>
+    <div class="answer">
+        <p>Подумай таким чином: тобі потрібно пройти всі елементи запропонованого списку і
+        створити новий список з не унікальними елементами. І знову, я покажу тобі два способи.</p>
+
+        <p>Це довший:</p>
+
+<pre class="brush: python">
+function nonUniqueElements(data) {
+    const new_result = []
+    for (let item of data) {
+        if (!isUnique(data, item)) {
+            new_result.push(item)
+        }
+    }
+    return new_result;
+}
+</pre>
+
+
+<p>І короткий:</p>
+
+<pre class="brush: python">
+function nonUniqueElements(data) {
+    return data.filter(item => !isUnique(data, item))
+}
+</pre>
+
+    </div>
+</div>
+
+</body>
