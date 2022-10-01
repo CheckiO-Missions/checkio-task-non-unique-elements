@@ -10,13 +10,13 @@ function nonUniqueElements(data: number[]): number[] {
 
 {% block example %}
 console.log('Example:');
-console.log(nonUniqueElements([1, 2, 3, 1, 3]));
+console.log(JSON.stringify(nonUniqueElements([1, 2, 3, 1, 3])));
 {% endblock %}
 
 // These "asserts" are used for self-checking
 {% block tests %}
 {% for t in tests %}
-assert.strictEqual({% block call %}nonUniqueElements({{t.input|j_args}})
+assert.deepEqual({% block call %}nonUniqueElements({{t.input|j_args}})
 {% endblock %}, {% block result %}{{t.answer|j}}{% endblock %});{% endfor %}
 {% endblock %}
 
