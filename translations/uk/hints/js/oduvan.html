@@ -1,14 +1,18 @@
 <body data-author="oduvan">
 <div class="question-answer">
     <div class="question">
-        Хотів би отримати підказку, як розвязати цю міссію.
+        <p>
+            Хотів би отримати підказку, як розв'язати цю місію.
+        </p>
     </div>
     <div class="answer">
-        <p>Що ж, почнемо із простої функції, яка перевіряє, запитуваний елемент унікальний в листі.</p>
-
+        <p>
+            Що ж, почнемо із простої функції, яка перевіряє, запитуваний елемент унікальний в листі.
+        </p>
         <p>Поки що маю для тебе дві версії розв'язку. Перша довша:</p>
-        <pre class="brush: python">
-function isUnique(arr, el) {
+        <pre class="brush: javascript">
+function isUnique(arr: number[], el: number): boolean {
+
     var hasOne = false;
     for (let item of arr) {
         if (item === el) {
@@ -22,10 +26,10 @@ function isUnique(arr, el) {
     return true;
 }
         </pre>
-
         <p>Друга коротша, але може бути важкою для розуміння, якщо ти новачок в JS і ES6</p>
-        <pre class="brush: python">
-function isUnique(arr, el) {
+        <pre class="brush: javascript">
+function isUnique(arr: number[], el: number): boolean {
+
     return arr.filter(a => a === el).length === 1
 }
         </pre>
@@ -33,16 +37,18 @@ function isUnique(arr, el) {
 </div>
 <div class="question-answer">
     <div class="question">
-        Як мені використати це тут?
+        <p>
+            Як мені використати це тут?
+        </p>
     </div>
     <div class="answer">
-        <p>Подумай таким чином: тобі потрібно пройти всі елементи запропонованого списку і
-        створити новий список з не унікальними елементами. І знову, я покажу тобі два способи.</p>
-
+        <p>
+            Подумай таким чином: тобі потрібно пройти всі елементи запропонованого списку і створити новий список з не унікальними елементами. І знову, я покажу тобі два способи.
+        <p>
         <p>Це довший:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
 
-<pre class="brush: python">
-function nonUniqueElements(data) {
     const new_result = []
     for (let item of data) {
         if (!isUnique(data, item)) {
@@ -51,18 +57,63 @@ function nonUniqueElements(data) {
     }
     return new_result;
 }
-</pre>
-
-
-<p>І короткий:</p>
-
-<pre class="brush: python">
-function nonUniqueElements(data) {
+        </pre>
+        <p>І короткий:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+    
     return data.filter(item => !isUnique(data, item))
 }
-</pre>
-
+        </pre>
     </div>
 </div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            То як має виглядати моє остаточне рішення?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Ти просто маєш використати обидві функції:
+        </p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
 
+    const new_result = []
+    for (let item of data) {
+        if (!isUnique(data, item)) {
+            new_result.push(item)
+        }
+    }
+    return new_result;
+}
+function isUnique(arr: number[], el: number): boolean {
+
+    var hasOne = false;
+    for (let item of arr) {
+        if (item === el) {
+            if (hasOne) {
+                return false;
+            } else {
+                hasOne = true;
+            }
+        }
+    }
+    return true;
+}
+        </pre>
+        <p>Або коротка версія:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    return data.filter(item => !isUnique(data, item))
+}
+function isUnique(arr: number[], el: number): boolean {
+
+    return arr.filter(a => a === el).length === 1
+}
+        </pre>
+    </div>
+</div>
 </body>

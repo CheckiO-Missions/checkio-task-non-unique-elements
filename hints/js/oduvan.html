@@ -1,14 +1,20 @@
 <body data-author="oduvan">
 <div class="question-answer">
     <div class="question">
-        Please give me a hint on how to solve this mission.
+        <p>
+            Please give me a hint on how to solve this mission.
+        </p>
     </div>
     <div class="answer">
-        <p>Well, let’s starting with a simple function that recognizes if this is a unique element in a given list.</p>
+        <p>
+            Well, let’s starting with a simple function that recognizes if this is a unique element in a given list.
+        </p>
+        <p>
+            For now I have a couple versions for you to try. First one is longer:
+        </p>
+        <pre class="brush: javascript">
+function isUnique(arr: number[], el: number): boolean {
 
-        <p>For now I have a couple versions for you to try. First one is longer:</p>
-        <pre class="brush: python">
-function isUnique(arr, el) {
     var hasOne = false;
     for (let item of arr) {
         if (item === el) {
@@ -22,10 +28,12 @@ function isUnique(arr, el) {
     return true;
 }
         </pre>
+        <p>
+            The second one is short but maybe harder to understand if you are new to JS and ES6.
+        </p>
+        <pre class="brush: javascript">
+function isUnique(arr: number[], el: number): boolean {
 
-        <p>The second one is short but maybe harder to understand if you are new to JS and ES6</p>
-        <pre class="brush: python">
-function isUnique(arr, el) {
     return arr.filter(a => a === el).length === 1
 }
         </pre>
@@ -33,15 +41,18 @@ function isUnique(arr, el) {
 </div>
 <div class="question-answer">
     <div class="question">
-        How can I use this to solve this mission?
+        <p>
+            How can I use this to solve this mission?
+        </p>
     </div>
     <div class="answer">
-        <p>Think about this way: you need to go through all elements of a given list and create a news list filled with all unique elements. Again, I’ll show you two ways to solve it</p>
-
+        <p>
+            Think about this way: you need to go through all elements of a given array and create a news array filled with all unique elements. Again, I’ll show you two ways to solve it.
+        </p>
         <p>A long one:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
 
-<pre class="brush: python">
-function nonUniqueElements(data) {
     const new_result = []
     for (let item of data) {
         if (!isUnique(data, item)) {
@@ -50,18 +61,63 @@ function nonUniqueElements(data) {
     }
     return new_result;
 }
-</pre>
+        </pre>
+        <p>And a short one:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
 
-
-<p>And a short one:</p>
-
-<pre class="brush: python">
-function nonUniqueElements(data) {
     return data.filter(item => !isUnique(data, item))
 }
-</pre>
-
+        </pre>
     </div>
 </div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            So, how my final solution should look like?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            You just need to use both functions:
+        </p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
 
+    const new_result = []
+    for (let item of data) {
+        if (!isUnique(data, item)) {
+            new_result.push(item)
+        }
+    }
+    return new_result;
+}
+function isUnique(arr: number[], el: number): boolean {
+
+    var hasOne = false;
+    for (let item of arr) {
+        if (item === el) {
+            if (hasOne) {
+                return false;
+            } else {
+                hasOne = true;
+            }
+        }
+    }
+    return true;
+}
+        </pre>
+        <p>Or a short version:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    return data.filter(item => !isUnique(data, item))
+}
+function isUnique(arr: number[], el: number): boolean {
+
+    return arr.filter(a => a === el).length === 1
+}
+        </pre>
+    </div>
+</div>
 </body>
