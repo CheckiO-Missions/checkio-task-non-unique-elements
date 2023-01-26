@@ -14,13 +14,8 @@
 </div>
 
 <p>
-    You are given a non-empty list of integers (X).
-    For this task, you should return a list consisting of only the non-unique elements in this list.
-    To do so you will need to remove all unique elements (elements which are contained in a given
-    list only once).
-    When solving this task, do not change the order of the list.
-    Example: [1, 2, 3, 1, 3] 1 and 3 non-unique elements and result will be [1, 3, 1, 3].
-
+    You are given a non-empty {% if is_js %}array of numbers{% else %}list of integers{% endif %}.
+    For this task, you should return {% if is_js %}an array{% else %}an Iterable{% endif %} consisting of only the non-unique elements from the initial {% if is_js %}array{% else %}list{% endif %}. To do so you will need to remove all unique elements (elements which are contained in a given {% if is_js %}array{% else %}list{% endif %} only once). When solving this task, do not change the order of the {% if is_js %}array{% else %}list{% endif %}. Example: in <b class="code">[1, 2, 3, 1, 3]</b> elements <b class="code">1, 3</b> are non-unique and result will be <b class="code">[1, 3, 1, 3]</b>.
 </p>
 
 <p style="text-align: center;">
@@ -30,32 +25,27 @@
          style="max-height: 160px"/>
 </p>
 
-<p><strong>Input: </strong>A list of integers.</p>
+<p><strong>Input:</strong>{% if is_js %}Array of numbers{% else %}List of integers{% endif %}.</p>
 
-<p><strong>Output: </strong>An iterable of integers.</p>
+<p><strong>Output:</strong>{% if is_js %}Array of numbers{% else %}Iterable of integers{% endif %}.</p>
 <div class="for_info_only">
-    <p><strong>Example:</strong></p>
+    <p><strong>Examples:</strong></p>
     <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 <br>
 <p>
     <strong>How it is used:</strong>
-    This mission will help you to understand how to manipulate arrays,
-    something that is the basis for solving more complex tasks.
-    The concept can be easily generalized for real world tasks.
-    For example: if you need to clarify statistics by removing low frequency elements (noise).
-
+    <i>
+        This mission will help you to understand how to manipulate {% if is_js %}arrays{% else %}lists{% endif %}, something that is the basis for solving more complex tasks. The concept can be easily generalized for real world tasks. For example: if you need to clarify statistics by removing low frequency elements (noise).
+    </i>
 </p>
-
 <p>
-    {% if interpreter.slug == "js-node" %}
-    You can find out more about JavaScript arrays in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">one of our articles featuring lists, tuples, array.array and numpy.array</a>.
+    {% if is_js %}
+    You can find out more about JavaScript arrays in <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">one of articles</a>.
     {% else %}
-    You can find out more about Python arrays in <a href="https://py.checkio.org/blog/arrays-for-python/">one of our articles featuring lists, tuples, array.array and numpy.array</a>. 
+    You can find out more about Python arrays in <a target="_blank" href="https://py.checkio.org/blog/arrays-for-python/">one of our articles featuring lists, tuples, array.array and numpy.array</a>. 
     {% endif %}
-
 </p>
-
 <p><strong>Precondition:</strong><br>
     0 &lt; len(data) &lt; 1000<br>
 </p>
