@@ -66,6 +66,7 @@ new_list.append(item)
 return new_list
         </pre>
         <p>Тож остаточний код матиме вигляд:</p>
+        <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
 
@@ -79,6 +80,7 @@ def checkio(data: list[int]) -> Iterator[int]:
 
     return result
         </pre>
+        </div>
         <p>
             Я також раджу тобі поглянути на всі <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">методи списків</a>, адже вони тобі точно знадобляться у майбутньому.
         </p>
@@ -118,6 +120,7 @@ def checkio(data: list[int]) -> Iterator[int]:
     return result
         </pre>
         <p>наступним:</p>
+        <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
 
@@ -126,6 +129,7 @@ def checkio(data: list[int]) -> Iterator[int]:
 
     return (a for a in data if data.count(a) > 1)
         </pre>
+        </div>
         <p>Так буде коротше і зрозуміліше.</p>
     </div>
 </div>
