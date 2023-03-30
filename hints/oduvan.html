@@ -70,6 +70,7 @@ new_list.append(item)
 return new_list
         </pre>
         <p>So the correct answer might look like this:</p>
+        <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
 
@@ -83,6 +84,7 @@ def checkio(data: list[int]) -> Iterator[int]:
 
     return result
         </pre>
+        </div>
         <p>
             I would also recommend you to have a look at all available <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a>, so you know what other methods you might need in the future.
         </p>
@@ -122,6 +124,7 @@ def checkio(data: list[int]) -> Iterator[int]:
     return result
         </pre>
         <p>with this:</p>
+        <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
 
@@ -130,6 +133,7 @@ def checkio(data: list[int]) -> Iterator[int]:
 
     return (a for a in data if data.count(a) > 1)
         </pre>
+        </div>
         <p>It is shorter and even easier to read.</p>
     </div>
 </div>
