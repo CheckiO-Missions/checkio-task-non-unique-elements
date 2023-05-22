@@ -14,8 +14,8 @@
 </div>
 
 <p>
-    You are given a non-empty {% if is_js %}array of numbers{% else %}list of integers{% endif %}.
-    For this task, you should return {% if is_js %}an array{% else %}an Iterable{% endif %} consisting of only the non-unique elements from the initial {% if is_js %}array{% else %}list{% endif %}. To do so you will need to remove all unique elements (elements which are contained in a given {% if is_js %}array{% else %}list{% endif %} only once). When solving this task, do not change the order of the {% if is_js %}array{% else %}list{% endif %}. Example: in <b class="code">[1, 2, 3, 1, 3]</b> elements <b class="code">1, 3</b> are non-unique and result will be <b class="code">[1, 3, 1, 3]</b>.
+    You are given a non-empty {% if is_js %}<span translate="repeat">array</span> of <span translate="repeat">numbers</span>{% else %}<span translate="repeat">list</span> of <span translate="repeat">integers</span>{% endif %}.
+    For this task, you should return {% if is_js %}an <span translate="repeat">array</span>{% else %}an <span translate="repeat">Iterable</span>{% endif %} consisting of only the non-unique elements from the initial {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %}. To do so you will need to remove all unique elements (elements which are contained in a given {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %} only once). When solving this task, do not change the order of the {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %}. Example: in <b class="code">[1, 2, 3, 1, 3]</b> elements <b class="code">1, 3</b> are non-unique and result will be <b class="code">[1, 3, 1, 3]</b>.
 </p>
 
 <p style="text-align: center;">
@@ -25,9 +25,9 @@
          style="max-height: 160px"/>
 </p>
 
-<p><strong>Input:</strong> {% if is_js %}Array of numbers{% else %}List of integers{% endif %}.</p>
+<p><strong>Input:</strong> {% if is_js %}<span translate="repeat">Array</span> of <span translate="repeat">numbers</span>{% else %}<span translate="repeat">List</span> of <span translate="repeat">integers</span>{% endif %}.</p>
 
-<p><strong>Output:</strong> {% if is_js %}Array of numbers{% else %}Iterable of integers{% endif %}.</p>
+<p><strong>Output:</strong> {% if is_js %}<span translate="repeat">Array</span> of <span translate="repeat">numbers</span>{% else %}<span translate="repeat">List</span> or another <span translate="repeat">Iterable</span> (<span translate="repeat">tuple</span>, <span translate="repeat">iterator</span>, <span translate="repeat">genetor</span>) of <span translate="repeat">integers</span>{% endif %}.</p>
 <div class="for_info_only">
     <p><strong>Examples:</strong></p>
     <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
@@ -36,7 +36,7 @@
 <p>
     <strong>How it is used:</strong>
     <i>
-        This mission will help you to understand how to manipulate {% if is_js %}arrays{% else %}lists{% endif %}, something that is the basis for solving more complex tasks. The concept can be easily generalized for real world tasks. For example: if you need to clarify statistics by removing low frequency elements (noise).
+        This mission will help you to understand how to manipulate {% if is_js %}<span translate="repeat">arrays</span>{% else %}<span translate="repeat">lists</span>{% endif %}, something that is the basis for solving more complex tasks. The concept can be easily generalized for real world tasks. For example: if you need to clarify statistics by removing low frequency elements (noise).
     </i>
 </p>
 <p>
