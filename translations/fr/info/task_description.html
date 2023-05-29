@@ -14,8 +14,8 @@
 </div>
 
 <p>
-    On vous donne un tableau non vide {% if is_js %} <span>(array)</span> de nombres <span>(numbers)</span>{% else %} liste <span>(list)</span> d'entiers <span>(integers)</span>{% endif %}.
-    Pour cette tâche, vous devez retourner {% if is_js %}un tableau <span>(array)</span>{% else %} un itérable <span>(Iterable)</span>{% endif %} composé uniquement des éléments non uniques du tableau initial {% if is_js %} <span>(array)</span> {% else %} liste <span>(list)</span>{% endif %}. Pour ce faire, vous devrez supprimer tous les éléments uniques (éléments contenus une seule fois dans un tableau {% if is_js %} <span>(array)</span> {% else %} list{% endif %} ). Lorsque vous effectuez cette tâche, ne changez pas l'ordre du tableau {% if is_js %} <span>(array)</span> {% else %} liste <span>(list)</span>{% endif %}. Exemple: dans <b class="code">[1, 2, 3, 1, 3]</b>, les éléments <b class="code">1, 3</b> ne sont pas uniques et le résultat sera <b class="code">[1, 3, 1, 3]</b>.
+    On vous donne un tableau non vide {% if is_js %}<span>(array)</span> de nombres <span>(numbers)</span>{% else %}liste <span>(list)</span> d'entiers <span>(integers)</span>{% endif %}.
+    Pour cette tâche, vous devez retourner {% if is_js %}un tableau <span>(array)</span>{% else %}un Itérable{% endif %} composé uniquement des éléments non uniques du initial {% if is_js %}tableau <span>(array)</span>{% else %}liste <span>(list)</span>{% endif %}. Pour ce faire, vous devrez supprimer tous les éléments uniques (éléments contenus une seule fois dans un {% if is_js %}tableau <span>(array)</span>{% else %} list{% endif %}). Lorsque vous effectuez cette tâche, ne changez pas l'ordre du {% if is_js %}tableau <span>(array)</span>{% else %}liste <span>(list)</span>{% endif %}. Exemple: dans <b class="code">[1, 2, 3, 1, 3]</b>, les éléments <b class="code">1, 3</b> ne sont pas uniques et le résultat sera <b class="code">[1, 3, 1, 3]</b>.
 </p>
 
 <p style="text-align: center;">
@@ -25,9 +25,9 @@
          style="max-height: 160px"/>
 </p>
 
-<p><strong>Entrée:</strong> {% if is_js %}Tableau <span>(Array)</span> de nombres <span>(numbers)</span>{% else %} Liste <span>(List)</span> d'entiers <span>(integers)</span>{% endif %}.</p>
+<p><strong>Entrée:</strong> {% if is_js %}Tableau <span>(array)</span> de nombres <span>(numbers)</span>{% else %}Liste <span>(list)</span> d'entiers <span>(integers)</span>{% endif %}.</p>
 
-<p><strong>Résultat:</strong> {% if is_js %}Tableau <span>(Array)</span> de nombres <span>(numbers)</span>{% else %} Liste <span>(List)</span> ou autre Iterable (tuple, iterator, genetor) d'entiers <span>(integers)</span>{% endif %}.</p>
+<p><strong>Résultat:</strong> {% if is_js %}Tableau <span>(array)</span> de nombres <span>(numbers)</span>{% else %}Liste <span>(list)</span> ou autre Iterable (tuple, iterator, generator) d'entiers <span>(integers)</span>{% endif %}.</p>
 <div class="for_info_only">
     <p><strong>Exemples:</strong></p>
     <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
@@ -36,14 +36,14 @@
 <p>
     <strong>Comment l'utiliser:</strong>
     <i>
-        Cette mission vous aidera à comprendre comment manipuler des tableaux {% if is_js %} <span>(arrays)</span> {% else %} des listes <span>(lists)</span>{% endif %} , ce qui constitue la base de la résolution de tâches plus complexes. Le concept peut être facilement généralisé pour des tâches du monde réel. Par exemple: si vous devez clarifier des statistiques en éliminant des éléments de basse fréquence (bruit).
+        Cette mission vous aidera à comprendre comment manipuler des {% if is_js %}tableaux <span>(arrays)</span>{% else %}listes <span>(lists)</span>{% endif %}, ce qui constitue la base de la résolution de tâches plus complexes. Le concept peut être facilement généralisé pour des tâches du monde réel. Par exemple: si vous devez clarifier des statistiques en éliminant des éléments de basse fréquence (bruit).
     </i>
 </p>
 <p>
    {% if is_js %}
-    Pour en savoir plus sur les tableaux JavaScript, consultez le site <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">one of articles</a>.
+    Pour en savoir plus sur les tableaux JavaScript, consultez le site <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">un des articles</a>.
    {% else %}
-    Pour en savoir plus sur les tableaux Python, consultez le site <a target="_blank" href="https://py.checkio.org/blog/arrays-for-python/">one of our articles featuring lists, tuples, array.array and numpy.array</a>. 
+    Pour en savoir plus sur les tableaux Python, consultez le site <a target="_blank" href="https://py.checkio.org/blog/arrays-for-python/">un de nos articles sur les listes, les tuples, array.array et numpy.array</a>. 
    {% endif %}
 </p>
 <p><strong>Condition préalable:</strong><br>
