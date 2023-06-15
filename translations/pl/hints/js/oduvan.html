@@ -1,0 +1,127 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Proszę dać mi wskazówkę, jak rozwiązać tę misję.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Cóż, zacznijmy od prostej funkcji, która rozpoznaje, czy jest to unikalny element na danej liście.
+        </p>
+        <p>
+            Na razie mam kilka wersji do wypróbowania. Pierwsza jest dłuższa:
+        </p>
+        <pre class="brush: javascript">
+function isUnique(arr: number[], el: number): boolean {
+
+    var hasOne = false;
+    for (let item of arr) {
+        if (item === el) {
+            if (hasOne) {
+                return false;
+            } else {
+                hasOne = true;
+            }
+        }
+    }
+    return true;
+}
+        </pre>
+        <p>
+            Druga jest krótsza, ale może być trudniejsza do zrozumienia, jeśli są Państwo nowicjuszami w JS i ES6.
+        </p>
+        <pre class="brush: javascript">
+function isUnique(arr: number[], el: number): boolean {
+
+    return arr.filter(a => a === el).length === 1
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak mogę to wykorzystać do rozwiązania tej misji?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę pomyśleć w ten sposób: trzeba przejść przez wszystkie elementy danej tablicy i utworzyć tablicę wiadomości wypełnioną wszystkimi unikalnymi elementami. Ponownie, pokażę Państwu dwa sposoby rozwiązania tego zadania.
+        </p>
+        <p>Długi:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    const new_result = []
+    for (let item of data) {
+        if (!isUnique(data, item)) {
+            new_result.push(item)
+        }
+    }
+    return new_result;
+}
+        </pre>
+        <p>I krótki:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    return data.filter(item =>!isUnique(data, item))
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak powinno wyglądać moje ostateczne rozwiązanie?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Wystarczy użyć obu funkcji:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    const new_result = []
+    for (let item of data) {
+        if (!isUnique(data, item)) {
+            new_result.push(item)
+        }
+    }
+    return new_result;
+}
+function isUnique(arr: number[], el: number): boolean {
+
+    var hasOne = false;
+    for (let item of arr) {
+        if (item === el) {
+            if (hasOne) {
+                return false;
+            } else {
+                hasOne = true;
+            }
+        }
+    }
+    return true;
+}
+        </pre>
+        </div>
+        <p>Albo wersja skrócona:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    return data.filter(item =>!isUnique(data, item))
+}
+function isUnique(arr: number[], el: number): boolean {
+
+    return arr.filter(a => a === el).length === 1
+}
+        </pre>
+        </div>
+    </div>
+</div>
+</body>

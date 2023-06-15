@@ -1,0 +1,139 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Proszę dać mi wskazówkę, jak rozwiązać tę misję.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Może Pan użyć metody listy <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">count</a>, która zwraca liczbę wystąpień <b class="code">x</b> na liście.</p>
+        <p>
+            Proszę podać przykład:
+        </p>
+        <pre class="brush: python">
+a = [1, 2, 2, 3, 4, 5, 6, 3, 2]
+print(a.count(3))        
+        </pre>
+        <div class="output">
+            <p>Dane wyjściowe:</p>
+            <pre>
+2</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak mogę to wykorzystać do rozwiązania tej misji?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Pomyślmy o tym w ten sposób: trzeba przejść przez wszystkie elementy danej listy i utworzyć nową listę wypełnioną wszystkimi nieunikalnymi elementami.
+        </p>
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+    # init empty list
+    for item in data:
+        if data.count(item)> 1:
+            # add the current item to the new list you initialized before
+    # return the list
+        </pre>
+        <p>
+            Wszystko, co pozostało do zrobienia, to zastąpienie komentarzy kodem Pythona.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Proszę pomóc mi zastąpić komentarze.
+        </p>
+    </div>
+    <div class="answer">
+        <p>Oczywiście, oto co musi Pan wiedzieć.</p>
+        <p>Aby zainicjować pustą listę, proszę zrobić to:</p>
+        <pre class="brush: python">
+new_list = []
+        </pre>
+        <p>Aby dodać element do listy proszę wykonać to:</p>
+        <pre class="brush: python">
+new_list.append(item)
+        </pre>
+        <p>Aby zwrócić listę, proszę użyć tego:</p>
+        <pre class="brush: python">
+return new_list
+        </pre>
+        <p>Tak więc poprawna odpowiedź może wyglądać następująco:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    result = []
+    for item in data:
+        if data.count(item)> 1:
+            result.append(item)
+
+    return result
+        </pre>
+        </div>
+        <p>
+            Zalecam również zapoznanie się ze wszystkimi dostępnymi <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a>, aby wiedzieć, jakie inne metody mogą być potrzebne w przyszłości.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Czy mogę w jakiś sposób poprawić to rozwiązanie?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Zawsze można coś poprawić. Proszę spojrzeć na stronę <a target="_blank" href="https://wiki.python.org/moin/Generators">Generators for Python</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok. Jak mogę tego użyć?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Mogą Państwo po prostu zastąpić kod</p>
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    result = []
+    for item in data:
+        if data.count(item)> 1:
+            result.append(item)
+
+    return result
+        </pre>
+        <p>tym:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    return (a for a in data if data.count(a)> 1)
+        </pre>
+        </div>
+        <p>Jest krótszy i jeszcze łatwiejszy do odczytania.</p>
+    </div>
+</div>
+</body>
