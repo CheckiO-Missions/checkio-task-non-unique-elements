@@ -15,7 +15,7 @@
 
 <p>
     Otrzymują Państwo niepusty ciąg liczb całkowitych.
-    W tym zadaniu powinien Pan zwrócić {% if is_js %}Array{% else %}Iterable{% endif %} <span>({% if is_js %}Array{% else %}Iterable{% endif %})</span> składającą się tylko z nieunikalnych elementów z początkowej sekwencji. W tym celu należy usunąć wszystkie elementy unikalne (elementy, które występują w danym ciągu tylko raz). Podczas rozwiązywania tego zadania proszę nie zmieniać kolejności elementów. Przykład: w <b class="code">[1, 2, 3, 1, 3]</b> elementy <b class="code">1, 3</b> są nieunikalne, a wynikiem będzie <b class="code">[1, 3, 1, 3]</b>.
+    W tym zadaniu powinien Pan zwrócić {% if is_js %}Array{% else %}Iterable{% endif %} <span>({% if is_js %}Array{% else %}Iterable{% endif %})</span> składającą się tylko z nieunikalnych elementów z początkowej sekwencji. W tym celu należy usunąć wszystkie elementy unikatowe (elementy, które występują w danym ciągu tylko raz). Podczas rozwiązywania tego zadania proszę nie zmieniać kolejności elementów. Przykład: w <b class="code">[1, 2, 3, 1, 3]</b> elementy <b class="code">1, 3</b> są nieunikalne, a wynikiem będzie <b class="code">[1, 3, 1, 3]</b>.
 </p>
 
 <p style="text-align: center;">
@@ -27,7 +27,7 @@
 
 <p><strong>Dane wejściowe:</strong> {% if is_js %}Tablica{% else %}Lista{% endif %} <span>({% if is_js %}Array{% else %}List{% endif %})</span> liczb całkowitych <span>{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
 
-<p><strong>Wyjście:</strong> {% if is_js %}Tablica{% else %}<span translate="repeat"> Lista <span>({% if is_js %}Array{% else %}<span translate="repeat">List)</span> lub inny Iterable (tuple, iterator, genetor){% endif %} liczb całkowitych <span>{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
+<p><strong>Wyjście:</strong> {% if is_js %}Array{% else %} List lub inny Iterable (tuple, iterator, genetor){% endif %} liczb całkowitych <span>{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
 <div class="for_info_only">
     <p><strong>Przykłady:</strong></p>
     <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
