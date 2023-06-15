@@ -27,7 +27,7 @@
 
 <p><strong>Input:</strong> <span translate="repeat">{% if is_js %}Array{% else %}List{% endif %}</span> of integers <span translate="no">{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
 
-<p><strong>Output:</strong> <span translate="repeat">{% if is_js %}Array{% else %}<span translate="repeat">List</span> or another <span translate="repeat">Iterable</span> (<span translate="repeat">tuple</span>, <span translate="repeat">iterator</span>, <span translate="repeat">genetor</span>){% endif %} of integers <span translate="no">{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
+<p><strong>Output:</strong> {% if is_js %}<span translate="repeat">Array</span>{% else %}<span translate="repeat">List</span> or another <span translate="repeat">Iterable</span> (<span translate="repeat">tuple</span>, <span translate="repeat">iterator</span>, <span translate="repeat">genetor</span>){% endif %} of integers <span translate="no">{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
 <div class="for_info_only">
     <p><strong>Examples:</strong></p>
     <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
