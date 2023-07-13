@@ -1,0 +1,139 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            请告诉我如何解决这个任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            您可以使用列表方法<a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">count</a> ，该方法返回<b class="code">x</b> 在列表中出现的次数。</p>
+        <p>
+            下面是一个示例：
+        </p>
+        <pre class="brush: python">
+a = [1, 2, 2, 3, 4, 5, 6, 3, 2]
+print(a.count(3))        
+        </pre>
+        <div class="output">
+            <p>输出：</p>
+            <pre>
+2</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我如何用它来解决这个任务？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            让我们这样想：您需要浏览给定列表中的所有元素，并创建一个包含所有非唯一元素的新列表。
+        </p>
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+    # init empty list
+    for item in data:
+        if data.count(item)> 1:
+            # add the current item to the new list you initialized before
+    # return the list
+        </pre>
+        <p>
+            剩下要做的就是用python代码替换注释。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            请帮助我替换注释。
+        </p>
+    </div>
+    <div class="answer">
+        <p>当然可以，以下是您需要知道的。</p>
+        <p>要初始化一个空列表，请这样做：</p>
+        <pre class="brush: python">
+new_list = []
+        </pre>
+        <p>要向列表中添加一个项目，请执行以下操作：</p>
+        <pre class="brush: python">
+new_list.append(item)
+        </pre>
+        <p>要返回列表，请执行以下操作：</p>
+        <pre class="brush: python">
+return new_list
+        </pre>
+        <p>所以正确的答案可能是这样的</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    result = []
+    for item in data:
+        if data.count(item)> 1:
+            result.append(item)
+
+    return result
+        </pre>
+        </div>
+        <p>
+            我还建议你看一下所有可用的<a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a> ，这样你就知道将来可能还需要哪些方法。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            有什么方法可以改进解决方案吗？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            总有改进的办法。您可以查看<a target="_blank" href="https://wiki.python.org/moin/Generators">Generators for Python</a> 。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            好的。如何使用？
+        </p>
+    </div>
+    <div class="answer">
+        <p>您只需将代码</p>
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    result = []
+    for item in data:
+        if data.count(item)> 1:
+            result.append(item)
+
+    return result
+        </pre>
+        <p>替换为</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    return (a for a in data if data.count(a)> 1)
+        </pre>
+        </div>
+        <p>它更简短、更易读。</p>
+    </div>
+</div>
+</body>
