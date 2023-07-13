@@ -1,14 +1,22 @@
-﻿<div class="story">
+<div class="story">
     <div style="text-align: center">
         <img src="{{MEDIA}}robots.png" style="max-height: 350px">
     </div>
+    <p>
+        如果您有50种不同的插头类型，那么电器将无法使用，而且会非常昂贵。
+        而且价格昂贵。但是，一旦插座标准化，许多公司就可以设计出不同类型的电器。
+        电器，竞争随之而来，为消费者创造了更多的选择和更优惠的价格。
+       <br>
+        -- 比尔-盖茨
+
+    </p>
 
 </div>
 
 <p>
-    你将得到一个含有整数（X）的非空列表。在这个任务里，你应该返回在此列表中的非唯一元素的列表。要做到这一点，你需要删除所有独特的元素（这是包含在一个给定的列表只有一次的元素）。解决这个任务时，不能改变列表的顺序。例如：[1，2，3，1，3] 1和3是非唯一元素，结果将是 [1, 3, 1, 3]。
+    给您一个非空整数序列。
+    对于这个任务，您应该返回{% if is_js %}Array{% else %}Iterable{% endif %} <span>({% if is_js %}Array{% else %}Iterable{% endif %})</span>只包含初始序列中的非唯一元素。为此，您需要删除所有唯一元素（在给定序列中只包含一次的元素）。解决这个问题时，不要改变元素的顺序。例如：在<b class="code">[1, 2, 3, 1, 3]</b> 中<b class="code">1, 3</b> 是非唯一元素，结果将是<b class="code">[1, 3, 1, 3]</b> 。
 </p>
-
 
 <p style="text-align: center;">
     <img title="non-unique-elements"
@@ -17,21 +25,28 @@
          style="max-height: 160px"/>
 </p>
 
+<p><strong>输入：</strong> {% if is_js %}数组{% else %}列表{% endif %} <span>({% if is_js %}Array{% else %}List{% endif %})</span>的整数 <span>{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
 
-<p><strong>输入: </strong>一个含有整数的列表。 </p>
-
-
-<p><strong>输出: </strong>An iterable of integers.</p>
+<p><strong>输出：</strong> {% if is_js %}数组<span>(Array)</span>{% else %} 列表<span>(List)</span> 或另一个可迭代数<span>(Iterable)</span> (tuple<span>(tuple)</span>, iterator<span>(iterator)</span>, genetor<span>(genetor)</span>){% endif %} of integers <span>{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
 <div class="for_info_only">
-    <p><strong>范例:</strong></p>
+    <p><strong>例子：</strong></p>
     <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
+<br>
 <p>
     <strong>如何使用：</strong>
-    这个任务将帮助您了解如何操作数组，这是解决更复杂的任务的基础。这个概念可以很容易地推广到真实世界的任务。例如你需要通过删除低频的元素（噪声）来使统计数据更清楚。
+    <i>
+        这个任务将帮助你理解如何操作序列，这是解决更复杂任务的基础。这个概念可以很容易地推广到现实世界的任务中。例如：如果您需要通过去除低频元素（噪声）来澄清统计数据。
+    </i>
+</p>
+<p>
+   {% if is_js %}
+    有关JavaScript数组的更多信息，请访问<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">one of articles</a> 。
+   {% else %}
+    有关 Python 列表的更多信息，请访问<a target="_blank" href="https://py.checkio.org/blog/arrays-for-python/">one of our articles featuring lists, tuples, array.array and numpy.array</a> 。 
+   {% endif %}
+</p>
+<p><strong>前提条件</strong><br>
+    0 &lt; len(data) &lt; 1000<br>
 </p>
 
-
-<p><strong>前提:<br> </strong>
-    0 &lt; |X| &lt; 1000<br>
-</p>
