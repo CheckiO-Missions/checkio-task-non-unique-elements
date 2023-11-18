@@ -1,0 +1,127 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Bitte geben Sie mir einen Tipp, wie ich diese Mission lösen kann.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Beginnen wir mit einer einfachen Funktion, die erkennt, ob dies ein eindeutiges Element in einer gegebenen Liste ist.
+        </p>
+        <p>
+            Für den Moment habe ich ein paar Versionen für Sie zum Ausprobieren. Die erste ist länger:
+        </p>
+        <pre class="brush: javascript">
+function isUnique(arr: number[], el: number): boolean {
+
+    var hasOne = false;
+    for (let item of arr) {
+        if (item === el) {
+            if (hasOne) {
+                return false;
+            } else {
+                hasOne = true;
+            }
+        }
+    }
+    return true;
+}
+        </pre>
+        <p>
+            Die zweite ist kurz, aber vielleicht etwas schwieriger zu verstehen, wenn Sie neu in JS und ES6 sind.
+        </p>
+        <pre class="brush: javascript">
+function isUnique(arr: number[], el: number): boolean {
+
+    return arr.filter(a => a === el).length === 1
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie kann ich damit diese Aufgabe lösen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Stellen Sie sich das so vor: Sie müssen alle Elemente eines gegebenen Arrays durchgehen und ein neues Array mit allen eindeutigen Elementen erstellen. Auch hier zeige ich Ihnen zwei Wege zur Lösung der Aufgabe.
+        </p>
+        <p>Eine lange:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    const new_result = []
+    for (let item of data) {
+        if (!isUnique(data, item)) {
+            new_result.push(item)
+        }
+    }
+    return new_result;
+}
+        </pre>
+        <p>Und eine kurze:</p>
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    return data.filter(item =>!isUnique(data, item))
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie sollte also meine endgültige Lösung aussehen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen nur beide Funktionen verwenden:
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    const new_result = []
+    for (let item of data) {
+        if (!isUnique(data, item)) {
+            new_result.push(item)
+        }
+    }
+    return new_result;
+}
+function isUnique(arr: number[], el: number): boolean {
+
+    var hasOne = false;
+    for (let item of arr) {
+        if (item === el) {
+            if (hasOne) {
+                return false;
+            } else {
+                hasOne = true;
+            }
+        }
+    }
+    return true;
+}
+        </pre>
+        </div>
+        <p>Oder eine Kurzversion:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function nonUniqueElements(data: number[]): number[] {
+
+    return data.filter(item =>!isUnique(data, item))
+}
+function isUnique(arr: number[], el: number): boolean {
+
+    return arr.filter(a => a === el).length === 1
+}
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
