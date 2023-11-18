@@ -1,0 +1,139 @@
+<body data-author="oduvan">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Bitte geben Sie mir einen Tipp, wie ich diese Mission lösen kann.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sie können die Listenmethode <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">count</a> verwenden, die die Anzahl der Vorkommen von <b class="code">x</b> in der Liste zurückgibt.</p>
+        <p>
+            Hier ist ein Beispiel:
+        </p>
+        <pre class="brush: python">
+a = [1, 2, 2, 3, 4, 5, 6, 3, 2]
+print(a.count(3))        
+        </pre>
+        <div class="output">
+            <p>Ausgabe:</p>
+            <pre>
+2</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie kann ich dies zur Lösung dieser Aufgabe verwenden?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Stellen Sie sich das so vor: Sie müssen alle Elemente einer gegebenen Liste durchgehen und eine neue Liste mit allen nicht eindeutigen Elementen erstellen.
+        </p>
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+    # init empty list
+    for item in data:
+        if data.count(item)> 1:
+            # add the current item to the new list you initialized before
+    # return the list
+        </pre>
+        <p>
+            Alles, was Sie noch tun müssen, ist, die Kommentare durch Python-Code zu ersetzen.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Bitte helfen Sie mir, die Kommentare zu ersetzen.
+        </p>
+    </div>
+    <div class="answer">
+        <p>Sicher. Hier ist, was Sie wissen müssen.</p>
+        <p>Um eine leere Liste zu initialisieren, tun Sie dies:</p>
+        <pre class="brush: python">
+new_list = []
+        </pre>
+        <p>Um ein Element zur Liste hinzuzufügen, tun Sie dies:</p>
+        <pre class="brush: python">
+new_list.append(item)
+        </pre>
+        <p>Um die Liste zurückzugeben, verwenden Sie dies:</p>
+        <pre class="brush: python">
+return new_list
+        </pre>
+        <p>Die richtige Antwort könnte also wie folgt aussehen:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    result = []
+    for item in data:
+        if data.count(item)> 1:
+            result.append(item)
+
+    return result
+        </pre>
+        </div>
+        <p>
+            Ich empfehle Ihnen auch, einen Blick auf alle verfügbaren <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a> zu werfen, damit Sie wissen, welche anderen Methoden Sie in Zukunft benötigen könnten.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Gibt es eine Möglichkeit, die Lösung zu verbessern?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Es gibt immer eine Möglichkeit, etwas zu verbessern. Sie können einen Blick auf <a target="_blank" href="https://wiki.python.org/moin/Generators">Generators for Python</a> werfen.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nun gut. Wie kann ich es verwenden?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Sie können einfach den Code</p>
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    result = []
+    for item in data:
+        if data.count(item)> 1:
+            result.append(item)
+
+    return result
+        </pre>
+        <p>durch diesen ersetzen:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterator
+
+
+def checkio(data: list[int]) -> Iterator[int]:
+
+    return (a for a in data if data.count(a)> 1)
+        </pre>
+        </div>
+        <p>Er ist kürzer und noch einfacher zu lesen.</p>
+    </div>
+</div>
+</body>
