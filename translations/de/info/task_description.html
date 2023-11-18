@@ -3,10 +3,10 @@
         <img src="{{MEDIA}}robots.png" style="max-height: 350px">
     </div>
     <p>
-        Mit 50 verschiedenen Steckertypen findet man keine passenden Geräte oder diese würden sehr teuer sein.
-        Sobald aber ein elektrischer Anschluss standardisiert wird, können viele Firmen Geräte designen,
-        Wettbewerb entsteht, mit wachsender Auswahl und besseren Preisen für Konsumenten.
-        <br>
+        Wenn Sie 50 verschiedene Steckertypen haben, wären die Geräte nicht verfügbar und sehr teuer
+        teuer. Aber sobald eine Steckdose standardisiert ist, können viele Unternehmen
+        geräte entwickeln, und es entsteht ein Wettbewerb, der für Vielfalt und bessere Preise für die Verbraucher sorgt.
+       <br>
         -- Bill Gates
 
     </p>
@@ -14,11 +14,8 @@
 </div>
 
 <p>
-    Du erhältst eine nicht-leere Liste von Ganzzahlen (X).
-    In dieser Aufgabe, sollst Du eine Liste bestehend nur aus den nicht-einmaligen Elementen daraus zurückgeben.
-    Dazu musst Du alle einmaligen Elemente (Elemente welche in einer gegebenen Liste nur genau einmal vorkommen) entfernen.
-    Zum Lösen dieser Aufgabe darfst Du die Reihenfolge der Liste nicht verändern.
-    Beispiel: [1, 2, 3, 1, 3] 1 und 3 sind nicht-einmalige Elemente und das Resultat lautet [1, 3, 1, 3].
+    Sie erhalten eine nicht leere Folge von ganzen Zahlen.
+    Für diese Aufgabe sollten Sie {% if is_js %}Array{% else %}Iterable{% endif %} <span>({% if is_js %}Array{% else %}Iterable{% endif %})</span> zurückgeben, das nur aus den nicht eindeutigen Elementen der Ausgangssequenz besteht. Dazu müssen Sie alle eindeutigen Elemente entfernen (Elemente, die in einer gegebenen Folge nur einmal enthalten sind). Ändern Sie beim Lösen dieser Aufgabe nicht die Reihenfolge der Elemente. Beispiel: in <b class="code">[1, 2, 3, 1, 3]</b> sind die Elemente <b class="code">1, 3</b> nicht eindeutig und das Ergebnis wird <b class="code">[1, 3, 1, 3]</b> sein.
 </p>
 
 <p style="text-align: center;">
@@ -28,22 +25,28 @@
          style="max-height: 160px"/>
 </p>
 
-<p><strong>Eingabe: </strong>Eine Liste von Ganzzahlen.</p>
+<p><strong>Eingabe:</strong> {% if is_js %}Array{% else %}Liste{% endif %} <span>({% if is_js %}Array{% else %}List{% endif %})</span> von ganzen Zahlen <span>{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
 
-<p><strong>Ausgabe: </strong>An iterable of integers.</p>
+<p><strong>Ausgabe:</strong> {% if is_js %}Array{% else %} Liste <span>(List)</span> oder ein anderes Iterable (Tupel <span>(tuple)</span>, Iterator <span>(iterator)</span>, Genetor <span>(genetor)</span>){% endif %} von ganzen Zahlen <span>{% if is_js %}(number){% else %}(int){% endif %}</span>.</p>
 <div class="for_info_only">
-    <p><strong>Beispiel:</strong></p>
+    <p><strong>Beispiele:</strong></p>
     <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 <br>
 <p>
-    <strong>Wozu das gut ist:</strong>
-    Diese Mission hilft Dir zu verstehen wie man Arrays manipuliert,
-    dies ist die Basis um komplexere Aufgaben lösen zu können.
-    Das Konzept kann einfach für praktische Aufgaben in der wirklichen Welt verallgemeinert werden.
-    Zum Beispiel: Du willst Statistiken bereinigen durch Entfernen von niederfrequenten Elementen (Noise).
+    <strong>Wie es verwendet wird:</strong>
+    <i>
+        Diese Aufgabe wird Ihnen helfen zu verstehen, wie man Sequenzen manipuliert, was die Grundlage für die Lösung komplexerer Aufgaben ist. Das Konzept kann leicht auf reale Aufgaben verallgemeinert werden. Zum Beispiel: Wenn Sie Statistiken durch Entfernen von niederfrequenten Elementen (Rauschen) klären müssen.
+    </i>
+</p>
+<p>
+   {% if is_js %}
+    Mehr über JavaScript-Arrays erfahren Sie unter <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections">one of articles</a>.
+   {% else %}
+    Mehr über Python-Listen erfahren Sie unter <a target="_blank" href="https://py.checkio.org/blog/arrays-for-python/">one of our articles featuring lists, tuples, array.array and numpy.array</a>. 
+   {% endif %}
+</p>
+<p><strong>Vorbedingung:</strong><br>
+    0 &lt; len(Daten) &lt; 1000<br>
 </p>
 
-<p><strong>Bedingung:</strong><br>
-    0 &lt; len(data) &lt; 1000<br>
-</p>
