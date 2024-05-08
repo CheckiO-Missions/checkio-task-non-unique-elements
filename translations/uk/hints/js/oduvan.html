@@ -2,14 +2,16 @@
 <div class="question-answer">
     <div class="question">
         <p>
-            Хотів би отримати підказку, як розв'язати цю місію.
+            Підкажіть, будь ласка, як вирішити цю місію.
         </p>
     </div>
     <div class="answer">
         <p>
-            Що ж, почнемо із простої функції, яка перевіряє, запитуваний елемент унікальний в листі.
+            Ну, почнемо з простої функції, яка розпізнає, чи це унікальний елемент у заданому списку.
         </p>
-        <p>Поки що маю для тебе дві версії розв'язку. Перша довша:</p>
+        <p>
+            Наразі у мене є кілька варіантів, які ви можете спробувати. Перший варіант довший:
+        </p>
         <pre class="brush: javascript">
 function isUnique(arr: number[], el: number): boolean {
 
@@ -26,7 +28,9 @@ function isUnique(arr: number[], el: number): boolean {
     return true;
 }
         </pre>
-        <p>Друга коротша, але може бути важкою для розуміння, якщо ти новачок в JS і ES6</p>
+        <p>
+            Другий варіант коротший, але може бути складнішим для розуміння, якщо ви новачок в JS та ES6.
+        </p>
         <pre class="brush: javascript">
 function isUnique(arr: number[], el: number): boolean {
 
@@ -38,14 +42,14 @@ function isUnique(arr: number[], el: number): boolean {
 <div class="question-answer">
     <div class="question">
         <p>
-            Як мені використати це тут?
+            Як я можу використати це для вирішення цієї місії?
         </p>
     </div>
     <div class="answer">
         <p>
-            Подумай таким чином: тобі потрібно пройти всі елементи запропонованого списку і створити новий список з не унікальними елементами. І знову, я покажу тобі два способи.
-        <p>
-        <p>Це довший:</p>
+            Подумайте про це так: вам потрібно перебрати всі елементи заданого масиву і створити масив новин, заповнений всіма унікальними елементами. Знову ж таки, я покажу вам два способи вирішення цієї задачі.
+        </p>
+        <p>Довгий:</p>
         <pre class="brush: javascript">
 function nonUniqueElements(data: number[]): number[] {
 
@@ -61,8 +65,8 @@ function nonUniqueElements(data: number[]): number[] {
         <p>І короткий:</p>
         <pre class="brush: javascript">
 function nonUniqueElements(data: number[]): number[] {
-    
-    return data.filter(item => !isUnique(data, item))
+
+    return data.filter(item =>!isUnique(data, item))
 }
         </pre>
     </div>
@@ -70,12 +74,12 @@ function nonUniqueElements(data: number[]): number[] {
 <div class="question-answer">
     <div class="question">
         <p>
-            То як має виглядати моє остаточне рішення?
+            Отже, як має виглядати моє остаточне рішення?
         </p>
     </div>
     <div class="answer">
         <p>
-            Ти просто маєш використати обидві функції:
+            Вам просто потрібно використовувати обидві функції:
         </p>
         <div class="spoiler">
         <pre class="brush: javascript">
@@ -105,12 +109,12 @@ function isUnique(arr: number[], el: number): boolean {
 }
         </pre>
         </div>
-        <p>Або коротка версія:</p>
+        <p>Або скорочену версію:</p>
         <div class="spoiler">
         <pre class="brush: javascript">
 function nonUniqueElements(data: number[]): number[] {
 
-    return data.filter(item => !isUnique(data, item))
+    return data.filter(item =>!isUnique(data, item))
 }
 function isUnique(arr: number[], el: number): boolean {
 
