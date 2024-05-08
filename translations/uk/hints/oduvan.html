@@ -2,70 +2,75 @@
 <div class="question-answer">
     <div class="question">
         <p>
-            Хотів би отримати підказку, як розв'язати цю місію.
+            Підкажіть, будь ласка, як вирішити цю місію.
         </p>
     </div>
     <div class="answer">
-        <p>Ти можеш використати метод списку <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">count</a>, який повертає кількість конкретного значення <b class="code">x</b> у списку.</p>
-        <p>Ось наприклад:</p>
+        <p>
+            Вам потрібно перевірити кожен елемент у заданому списку, чи не зустрічається він у ньому більше одного разу. Якщо так, то додати цей елемент до нового списку і повернути цей список в кінці функції. Таким чином, ви можете використовувати метод списку <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list.count()</a>, який повертає кількість разів, коли <b class="code">x</b> з'являється у списку.</p>
+        <p>
+            Ось приклад:
+        </p>
         <pre class="brush: python">
 a = [1, 2, 2, 3, 4, 5, 6, 3, 2]
 print(a.count(3))        
         </pre>
         <div class="output">
-            <p>Output:</p>
+            <p>Виведення:</p>
             <pre>
-2
-            </pre>
+2</pre>
         </div>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
         <p>
-            Як мені це використати для проходження місії?
+            Як я можу використати це для розв'язання цієї місії?
         </p>
     </div>
     <div class="answer">
         <p>
-            Давай міркувати так: тобі потрібно пройти по всіх елементах вхідного списку
-            і створити новий список із не унікальними елементами.
+            Все, що вам потрібно зробити, це замінити коментарі на відповідний код на python.
         </p>
         <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-    # тут ти маєш створити новий порожній список
-    for item in data:
-        if data.count(item) > 1:
-            # додай item у новий список, який ти створив раніше
-    # поверни список, який ти створив на початку
+# init empty list
+for item in data:
+    if data.count(item)> 1:
+        # add the current item to the new list you initialized before
+# return the list
         </pre>
-        <p>Все, що тобі лишилося, це замінити коментарі кодом.</p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
         <p>
-            Мені потрібна допомога із заміною коментарів на код.
+            Будь ласка, допоможіть мені замінити коментарі.
         </p>
     </div>
     <div class="answer">
-        <p>Звісно. Ось що тобі потрібно знати.</p>
-        <p>Щоб створити новий список, зроби наступне:</p>
+        <p>Звичайно. Ось що вам потрібно знати.</p>
+        <p>Щоб ініціалізувати порожній список, зробіть це:</p>
         <pre class="brush: python">
 new_list = []
         </pre>
-        <p>Щоб додати елемент до списку, зроби:</p>
+        <p>Щоб додати елемент до списку, зробіть це:</p>
         <pre class="brush: python">
 new_list.append(item)
         </pre>
-        <p>Щоб повернути готовий список, використай:</p>
+        <p>Щоб повернути список, скористайтеся цим:</p>
         <pre class="brush: python">
 return new_list
         </pre>
-        <p>Тож остаточний код матиме вигляд:</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Як має виглядати моє кінцеве рішення?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Вам потрібно обернути ваш код у вираз функції, використовуючи підказки типів. Оскільки вихідним значенням може бути будь-який ітератор, вам потрібно імпортувати цей тип перед визначенням функції.</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
@@ -75,51 +80,37 @@ def checkio(data: list[int]) -> Iterator[int]:
 
     result = []
     for item in data:
-        if data.count(item) > 1:
+        if data.count(item)> 1:
             result.append(item)
 
     return result
         </pre>
         </div>
         <p>
-            Я також раджу тобі поглянути на всі <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">методи списків</a>, адже вони тобі точно знадобляться у майбутньому.
+            Я також рекомендую вам ознайомитися з усіма доступними методами на сайті <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a>, щоб знати, які ще методи вам можуть знадобитися в майбутньому.
         </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
         <p>
-            Чи можна якось вдосконалити розв'язок?
+            Чи можна якось покращити розв'язок?
         </p>
     </div>
     <div class="answer">
         <p>
-            Завжди є можливість вдосконалити рішення! Ти можеш поглянути на <a target="_blank" href="https://wiki.python.org/moin/Generators">Генератори у Python</a>.
+            Завжди є спосіб щось покращити. Ви можете поглянути на <a target="_blank" href="https://wiki.python.org/moin/Generators">Generators for Python</a>.
         </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
         <p>
-            Так. І як це тут застосувати?
+            Гаразд. Як я можу ним користуватися?
         </p>
     </div>
     <div class="answer">
-        <p>Просто заміни код</p>
-        <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-
-    result = []
-    for item in data:
-        if data.count(item) > 1:
-            result.append(item)
-
-    return result
-        </pre>
-        <p>наступним:</p>
+        <p>Ось простіша версія:</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
@@ -127,10 +118,10 @@ from collections.abc import Iterator
 
 def checkio(data: list[int]) -> Iterator[int]:
 
-    return (a for a in data if data.count(a) > 1)
+    return (a for a in data if data.count(a)> 1)
         </pre>
         </div>
-        <p>Так буде коротше і зрозуміліше.</p>
+        <p>Вона коротша і ще легша для читання.</p>
     </div>
 </div>
 </body>
