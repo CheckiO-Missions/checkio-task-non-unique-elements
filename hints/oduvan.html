@@ -30,22 +30,15 @@ print(a.count(3))
     </div>
     <div class="answer">
         <p>
-            Let’s think about this way: you need to go through all elements of a given list and create a new list filled with all non unique elements.
+            All you have left to do is to replace the comments with appropriate python code.
         </p>
         <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-    # init empty list
-    for item in data:
-        if data.count(item) > 1:
-            # add the current item to the new list you initialized before
-    # return the list
+# init empty list
+for item in data:
+    if data.count(item) > 1:
+        # add the current item to the new list you initialized before
+# return the list
         </pre>
-        <p>
-            All you have left to do is to replace the comments with python code.
-        </p>
     </div>
 </div>
 <div class="question-answer">
@@ -68,7 +61,15 @@ new_list.append(item)
         <pre class="brush: python">
 return new_list
         </pre>
-        <p>So the correct answer might look like this:</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            How my final solution should loook like?
+        </p>
+    </div>
+        <p>You need to wrap your code into function expression using type hints. Since output value may be any Iterator, you need to import this type before fuction definition.</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
@@ -108,21 +109,7 @@ def checkio(data: list[int]) -> Iterator[int]:
         </p>
     </div>
     <div class="answer">
-        <p>You can simply replace code</p>
-        <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-
-    result = []
-    for item in data:
-        if data.count(item) > 1:
-            result.append(item)
-
-    return result
-        </pre>
-        <p>with this:</p>
+        <p>Here is a simpler version:</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
