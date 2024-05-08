@@ -7,7 +7,7 @@
     </div>
     <div class="answer">
         <p>
-            Vous pouvez utiliser la méthode de liste <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">count</a> qui renvoie le nombre de fois où <b class="code">x</b> apparaît dans la liste.</p>
+            Vous devez vérifier si chaque élément de la liste donnée apparaît plus d'une fois dans celle-ci. Si c'est le cas, ajoutez cet élément à une nouvelle liste et renvoyez cette liste à la fin de votre fonction. Vous pouvez donc utiliser la méthode de liste <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list.count()</a> qui renvoie le nombre de fois que <b class="code">x</b> apparaît dans la liste.</p>
         <p>
             Voici un exemple:
         </p>
@@ -18,8 +18,7 @@ print(a.count(3))
         <div class="output">
             <p>Sortie:</p>
             <pre>
-2
-            </pre>
+2</pre>
         </div>
     </div>
 </div>
@@ -31,22 +30,15 @@ print(a.count(3))
     </div>
     <div class="answer">
         <p>
-            Voyons les choses sous cet angle: vous devez passer en revue tous les éléments d'une liste donnée et créer une nouvelle liste contenant tous les éléments non uniques.
+            Il ne vous reste plus qu'à remplacer les commentaires par le code python approprié.
         </p>
         <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-    # init liste vide
-    for item in data:
-        if data.count(item) > 1:
-            # ajoute l'élément courant à la nouvelle liste initialisée précédemment
-    # return list
+# init empty list
+for item in data:
+    if data.count(item)> 1:
+        # add the current item to the new list you initialized before
+# return the list
         </pre>
-        <p>
-            Tout ce qu'il vous reste à faire est de remplacer les commentaires par du code python.
-        </p>
     </div>
 </div>
 <div class="question-answer">
@@ -69,7 +61,16 @@ new_list.append(item)
         <pre class="brush: python">
 return new_list
         </pre>
-        <p>La bonne réponse pourrait donc ressembler à ceci:</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            À quoi devrait ressembler ma solution finale?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Vous devez envelopper votre code dans une expression de fonction en utilisant des indications de type. Comme la valeur de sortie peut être n'importe quel itérateur, vous devez importer ce type avant la définition de la fonction.</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
@@ -79,21 +80,21 @@ def checkio(data: list[int]) -> Iterator[int]:
 
     result = []
     for item in data:
-        if data.count(item) > 1:
+        if data.count(item)> 1:
             result.append(item)
 
     return result
         </pre>
         </div>
         <p>
-            Je vous recommande également de jeter un coup d'œil à toutes les méthodes disponibles à l'adresse <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a>, afin de savoir de quelles autres méthodes vous pourriez avoir besoin à l'avenir.
+            Je vous recommande également de jeter un coup d'œil à tous les sites <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a> disponibles, afin de connaître les autres méthodes dont vous pourriez avoir besoin à l'avenir.
         </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
         <p>
-            Y a-t-il un moyen d'améliorer la solution?
+            Est-il possible d'améliorer la solution?
         </p>
     </div>
     <div class="answer">
@@ -109,21 +110,7 @@ def checkio(data: list[int]) -> Iterator[int]:
         </p>
     </div>
     <div class="answer">
-        <p>Vous pouvez simplement remplacer le code</p>
-        <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-
-    result = []
-    for item in data:
-        if data.count(item) > 1:
-            result.append(item)
-
-    return result
-        </pre>
-        <p>par celui-ci:</p>
+        <p>Voici une version plus simple:</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
@@ -131,10 +118,10 @@ from collections.abc import Iterator
 
 def checkio(data: list[int]) -> Iterator[int]:
 
-    return (a for a in data if data.count(a) > 1)
+    return (a for a in data if data.count(a)> 1)
         </pre>
         </div>
-        <p>C'est plus court et plus facile à lire.</p>
+        <p>Elle est plus courte et encore plus facile à lire.</p>
     </div>
 </div>
 </body>
