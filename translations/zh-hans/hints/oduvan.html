@@ -2,12 +2,12 @@
 <div class="question-answer">
     <div class="question">
         <p>
-            请告诉我如何解决这个任务。
+            请给我一个提示，告诉我如何解决这个任务。
         </p>
     </div>
     <div class="answer">
         <p>
-            您可以使用列表方法<a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">count</a> ，该方法返回<b class="code">x</b> 在列表中出现的次数。</p>
+            您需要检查给定列表中的每个元素是否在其中出现过不止一次。如果是，则将该元素添加到一个新列表中，并在函数结束时返回该列表。因此，您可以使用列表方法<a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list.count()</a> 来返回<b class="code">x</b> 在列表中出现的次数。</p>
         <p>
             下面是一个示例：
         </p>
@@ -30,45 +30,47 @@ print(a.count(3))
     </div>
     <div class="answer">
         <p>
-            让我们这样想：您需要浏览给定列表中的所有元素，并创建一个包含所有非唯一元素的新列表。
+            剩下要做的就是用适当的 python 代码替换注释。
         </p>
         <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-    # init empty list
-    for item in data:
-        if data.count(item)> 1:
-            # add the current item to the new list you initialized before
-    # return the list
+# init empty list
+for item in data:
+    if data.count(item)> 1:
+        # add the current item to the new list you initialized before
+# return the list
         </pre>
-        <p>
-            剩下要做的就是用python代码替换注释。
-        </p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
         <p>
-            请帮助我替换注释。
+            请帮我替换注释。
         </p>
     </div>
     <div class="answer">
-        <p>当然可以，以下是您需要知道的。</p>
-        <p>要初始化一个空列表，请这样做：</p>
+        <p>当然可以，以下是你需要知道的。</p>
+        <p>要初始化一个空列表，请执行以下操作：</p>
         <pre class="brush: python">
 new_list = []
         </pre>
-        <p>要向列表中添加一个项目，请执行以下操作：</p>
+        <p>要向列表中添加一个项目，请执行此操作：</p>
         <pre class="brush: python">
 new_list.append(item)
         </pre>
-        <p>要返回列表，请执行以下操作：</p>
+        <p>返回列表</p>
         <pre class="brush: python">
 return new_list
         </pre>
-        <p>所以正确的答案可能是这样的</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我的最终解决方案应该是怎样的？
+        </p>
+    </div>
+    <div class="answer">
+        <p>您需要使用类型提示将代码封装为函数表达式。由于输出值可以是任何迭代器，因此需要在函数定义前导入该类型。</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
@@ -85,7 +87,7 @@ def checkio(data: list[int]) -> Iterator[int]:
         </pre>
         </div>
         <p>
-            我还建议你看一下所有可用的<a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a> ，这样你就知道将来可能还需要哪些方法。
+            我还建议你查看一下所有可用的<a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a> ，这样你就能知道将来可能还需要哪些方法。
         </p>
     </div>
 </div>
@@ -108,21 +110,7 @@ def checkio(data: list[int]) -> Iterator[int]:
         </p>
     </div>
     <div class="answer">
-        <p>您只需将代码</p>
-        <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-
-    result = []
-    for item in data:
-        if data.count(item)> 1:
-            result.append(item)
-
-    return result
-        </pre>
-        <p>替换为</p>
+        <p>这里有一个更简单的版本：</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
