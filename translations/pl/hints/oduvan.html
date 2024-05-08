@@ -7,16 +7,16 @@
     </div>
     <div class="answer">
         <p>
-            Może Pan użyć metody listy <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">count</a>, która zwraca liczbę wystąpień <b class="code">x</b> na liście.</p>
+            Musi Pan sprawdzić każdy element na podanej liście, czy pojawia się na niej więcej niż raz. Jeśli tak, proszę dodać ten element do nowej listy i zwrócić tę listę na końcu funkcji. Można więc użyć metody listy <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list.count()</a>, która zwraca liczbę wystąpień <b class="code">x</b> na liście.</p>
         <p>
-            Proszę podać przykład:
+            Oto przykład:
         </p>
         <pre class="brush: python">
 a = [1, 2, 2, 3, 4, 5, 6, 3, 2]
 print(a.count(3))        
         </pre>
         <div class="output">
-            <p>Dane wyjściowe:</p>
+            <p>Wyjście:</p>
             <pre>
 2</pre>
         </div>
@@ -30,22 +30,15 @@ print(a.count(3))
     </div>
     <div class="answer">
         <p>
-            Pomyślmy o tym w ten sposób: trzeba przejść przez wszystkie elementy danej listy i utworzyć nową listę wypełnioną wszystkimi nieunikalnymi elementami.
+            Wszystko, co muszą Państwo zrobić, to zastąpić komentarze odpowiednim kodem Pythona.
         </p>
         <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-    # init empty list
-    for item in data:
-        if data.count(item)> 1:
-            # add the current item to the new list you initialized before
-    # return the list
+# init empty list
+for item in data:
+    if data.count(item)> 1:
+        # add the current item to the new list you initialized before
+# return the list
         </pre>
-        <p>
-            Wszystko, co pozostało do zrobienia, to zastąpienie komentarzy kodem Pythona.
-        </p>
     </div>
 </div>
 <div class="question-answer">
@@ -64,11 +57,20 @@ new_list = []
         <pre class="brush: python">
 new_list.append(item)
         </pre>
-        <p>Aby zwrócić listę, proszę użyć tego:</p>
+        <p>Aby zwrócić listę proszę użyć tego:</p>
         <pre class="brush: python">
 return new_list
         </pre>
-        <p>Tak więc poprawna odpowiedź może wyglądać następująco:</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak powinno wyglądać moje ostateczne rozwiązanie?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Proszę opakować swój kod w wyrażenie funkcji używając podpowiedzi typu. Ponieważ wartością wyjściową może być dowolny Iterator, należy zaimportować ten typ przed definicją funkcji.</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
@@ -108,21 +110,7 @@ def checkio(data: list[int]) -> Iterator[int]:
         </p>
     </div>
     <div class="answer">
-        <p>Mogą Państwo po prostu zastąpić kod</p>
-        <pre class="brush: python">
-from collections.abc import Iterator
-
-
-def checkio(data: list[int]) -> Iterator[int]:
-
-    result = []
-    for item in data:
-        if data.count(item)> 1:
-            result.append(item)
-
-    return result
-        </pre>
-        <p>tym:</p>
+        <p>Oto prostsza wersja:</p>
         <div class="spoiler">
         <pre class="brush: python">
 from collections.abc import Iterator
@@ -133,7 +121,7 @@ def checkio(data: list[int]) -> Iterator[int]:
     return (a for a in data if data.count(a)> 1)
         </pre>
         </div>
-        <p>Jest krótszy i jeszcze łatwiejszy do odczytania.</p>
+        <p>Jest krótsza i jeszcze łatwiejsza do odczytania.</p>
     </div>
 </div>
 </body>
