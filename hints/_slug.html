@@ -1,0 +1,151 @@
+<!-- Keep this file unchanged as template! For your own hints, make a copy and do necessary changes there.
+    
+Below are the real hints for "Sort Except Zero" mission https://py.checkio.org/en/mission/sort-except-zero/.
+
+The task is: Sort the integers in the list. But the position of zeros should not be changed.
+
+Do NOT include this block into your hints! It's just for your understanding the task. You may also change specific text, keeping the whole scenario -->
+
+<body data-author="YOUR_CHECKIO_USERNAME"> <!-- replace with your username at CheckiO -->
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        <p>
+            I offer you the following idea: you need to remember in which positions the zeros are located; sort the list in ascending order, without zeros; return the zeros to their positions.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I need help to continue the mission.
+    </div>
+    <div class="answer">
+        <p>
+            <!-- open links in new tabs -->
+            It will be useful for you to read some information about: <a target="_blank" href='https://docs.python.org/3.10/tutorial/datastructures.html'>list.insert()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_list_insert.asp'>example</a>), <a target="_blank" href='https://docs.python.org/3.10/library/functions.html#sorted'>sorted()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_func_sorted.asp'>example</a>), <a target="_blank" href='https://docs.python.org/3.10/library/functions.html#filter'>filter()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_func_filter.asp'>example</a>), <a target="_blank" href='https://docs.python.org/3.10/library/functions.html#enumerate'>enumerate()</a> (<a target="_blank" href='https://www.w3schools.com/python/ref_func_enumerate.asp'>example</a>).
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Need help!
+    </div>
+    <div class="answer">
+        <p>
+            Let's start by creating a list in which we will hold the positions of zeros. We will use the enumerate() function and the list comprehension for this.
+        </p>
+        <pre class="brush: python"> <!-- use such tag for python code -->
+items = [5, 3, 0, 0, 4, 1, 4, 0, 7] <!-- start the code from the beginning, with necessary relative indention of needed -->
+res = [i for i in enumerate(items) if i[1] == 0]
+print(res) <!-- write print statement, if you need to show output -->
+        </pre>
+        <div class="output"> <!-- use such tags for the code output -->
+            <p>Output</p>
+            <pre>[(2, 0), (3, 0), (7, 0)]</pre>
+        </div>
+        <p>
+            Pairs (index, value) fall into the list. Therefore, we record for ourselves exactly where the zeros were.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I don't know what to do anymore. I need a little hint.
+    </div>
+    <div class="answer">
+        <p>
+            The next step is to create a list in which we will place the sorted input list without zeros. To do this, we will use the filter() and sorted() functions.
+        </p>
+        <pre class="brush: python">
+items = [5, 3, 0, 0, 4, 1, 4, 0, 7]
+res = [i for i in enumerate(items) if i[1] == 0]
+res_2 = sorted(filter(lambda x: x > 0, items))
+print(res_2)
+        </pre>
+        <div class="output">
+            <p>Output</p>
+            <pre>[1, 3, 4, 4, 5, 7]</pre>
+        </div>
+        <p>
+            The filter() function uses an anonymous lambda function, in which we use a simple expression to check each element of the given list to see if it is greater than 0. If so, we leave it, if not, we skip it. And immediately put the result of the filter() function to the sorted() function, which sorts the newly created list by the increasing value of the elements.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Nothing works. SOS!
+    </div>
+    <div class="answer">
+        <p>
+            All we have to do is put our zeros back into their positions in list <b class="code">res_2</b>. We'll use the for loop and list.insert() method for this. It takes the position of the element as the first argument and the value of the element as the second element. That is, our saved pairs in <b class="code">res</b> will come in handy.
+        </p>
+        <pre class="brush: python">
+items = [5, 3, 0, 0, 4, 1, 4, 0, 7]
+res = [i for i in enumerate(items) if i[1] == 0]
+res_2 = sorted(filter(lambda x: x > 0, items))
+for i in res:
+    res_2.insert(i[0], i[1])
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I don't want to give up, help!
+    </div>
+    <div class="answer">
+        <p>
+            All you have to do is wrap the code in a function expression and return <b class="code">res_2</b>. <!-- use such tag for code formatting inside text -->
+        </p>
+        <div class="spoiler"> <!-- use this class to hide complete solutions -->
+        <pre class="brush: python">
+from collections.abc import Iterable <!-- if you need Iterable or another type, import it from collections.abc-->
+
+
+def except_zero(items: list[int]) -> Iterable[int]:
+
+    res = [i for i in enumerate(items) if i[1] == 0]
+    res_2 = sorted(filter(lambda x: x > 0, items))
+    for i in res:
+        res_2.insert(i[0], i[1])
+
+    return res_2
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I want to be the best of the best PROGRAMMERS!!! SHOW ME MORE SOLUTIONS!!1!!!11!
+    </div>
+    <div class="answer">
+        <p>Okay, okay! That's the spirit!=)</p>
+        <p> <!-- add 1-2 solutions with explanations -->
+            This solution will be difficult to understand. We can solve this mission using the <b class="code">numpy</b> module. Here you can read about this <a target="_blank" href='https://numpy.org/doc/'>module</a>.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+from collections.abc import Iterable
+import numpy
+
+
+def except_zero(items: list[int]) -> Iterable[int]:
+
+    items = numpy.r_[items]
+    items[items != 0] = sorted(items[items != 0])
+
+    return items
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks!
+    </div>
+    <div class="answer">
+        <p>You are welcome!</p>
+    </div>
+</div>
+</body>
